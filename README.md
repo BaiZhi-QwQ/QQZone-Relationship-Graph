@@ -7,6 +7,10 @@
 - 个人社交网络深度分析
 - 群组成员关系图谱生成
 
+## 依赖声明
+- 核心爬虫功能基于 [SmartHypercube/Qzone-API](https://github.com/SmartHypercube/Qzone-API) 实现
+- 稍有修改
+
 ## 🌟 核心功能
 | 功能 | Feature | 对应模块 | Module |
 |------|---------|----------|--------|
