@@ -37,7 +37,11 @@ python -c "from selenium import webdriver; webdriver.Chrome()"
 [主程序](main.py)
 
 ## -开始-
-1. **生成关系图**:
+1. **获取数据**
+2. **生成关系图**:
+![效果图1](data/b.png)
+![效果图2](data/a.png)
+![效果图3](data/c.png)
 [Network](test\生成完整net.py)
 ```python
 
