@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "group_id": 12345678,
+      "user_id": 123,
+      "nickname": "AAAA",
+    },
+    {
+      "group_id": 12345678,
+      "user_id": 12435,
+      "nickname": "BBBB",
+    },
+    {
+      "group_id": 12345678,
+      "user_id": 1234,
+      "nickname": "CCCC",
+    },
+    ]
+}
