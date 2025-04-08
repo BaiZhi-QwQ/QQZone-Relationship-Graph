@@ -12,12 +12,12 @@
 - 稍有修改
 
 ## 🌟 核心功能
-| 功能 | Feature | 对应模块 | Module |
-|------|---------|----------|--------|
-| Cookie管理 | Cookie Management | [QQZoneCookieManager](qqzone/qr_login.py) | [0] |
-| 数据爬取 | Data Crawling | [QzoneCrawler](qqzone/qzone_qq.py) | [2] |
-| 网络构建 | Network Construction | [QZoneNetworkBuilder](network/core/builder.py) | [3] |
-| 可视化 | Visualization | [NetworkVisualizer](network/core/visualizer.py) | [4] |
+| 功能       | 对应模块  | 
+|------------|----------------------|-----------|--------|
+| Cookie管理 | Cookie Management    | [QQZoneCookieManager](qqzone/qr_login.py)
+| 数据爬取   | Data Crawling        | [QzoneCrawler](qqzone/qzone_qq.py)
+| 网络构建   | Network Construction | [QZoneNetworkBuilder](network/core/builder.py)
+| 可视化     | Visualization        | [NetworkVisualizer](network/core/visualizer.py)
 
 ## 🛠️ 安装指南
 ```bash
@@ -33,29 +33,44 @@ python -c "from selenium import webdriver; webdriver.Chrome()"
 ```
 
 ## 🚀 快速开始
-1. **添加Cookie**
-```python
+**启动main.py**
+[主程序](main.py)
 
-from qqzone.qr_login import QQZoneCookieManager
-manager = QQZoneCookieManager()
-manager.add_cookie("your_qq_number", "cookie_data")
-
-```
-
-2. **生成关系图**:
+## -开始-
+1. **生成关系图**:
+[Network](test\生成完整net.py)
 ```python
 
 from network.core.builder import QZoneNetworkBuilder
 
+# 构建完整网络
 builder = QZoneNetworkBuilder()
-builder._load_data("data/qqzone_data/")  # QQ号文件
-builder.build_network(depth=2)  # 2度关系网络
-builder.visualize()  # 生成network.html
+builder.build_network()
+#builder.export_for_cosmograph()#导出为cvs文件
+
+# 可视化完整网络
+NetworkVisualizer.visualize(
+    builder.graph, 
+    builder.user_profiles, 
+    builder.interactions
+)
+
+target_uin = "123456789"  # 替换为实际QQ号
+    for depth in [1, 3, 5, 8]:# 深度列表
+        personal_graph = PersonalNetworkGenerator.generate(builder, target_uin, depth)
+        output_file = NetworkVisualizer.visualize(
+            personal_graph,
+            builder.user_profiles,
+            builder.interactions,
+            is_personal=True,
+            use_layout='default'
+        )
 
 ```
 
 ## 📊 数据格式 / Data Structure
 QQZone原始数据示例 ([来源](qqzone/qzone_qq.py))
+
 ```json
 {
   "uin": "123456",
