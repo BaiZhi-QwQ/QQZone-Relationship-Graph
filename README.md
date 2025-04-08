@@ -76,5 +76,3 @@ QQZone原始数据示例 ([来源](qqzone/qzone_qq.py))
 ## ⚙️ 配置说明
 > 📌 **提示**：完整配置文档见 ([config](config.md))   
 > 🐧 推荐运行环境：Python 3.8+，Chrome 100+
-
-```
