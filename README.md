@@ -28,8 +28,8 @@ pip install -r requirements.txt
 python -c "from selenium import webdriver; webdriver.Chrome()"
 ```
 
-## 🚀 快速开始 / Quick Start
-1. **添加Cookie** ([示例](data/example_cookie.json)):
+## 🚀 快速开始
+1. **添加Cookie**
 ```python
 
 from qqzone.qr_login import QQZoneCookieManager
